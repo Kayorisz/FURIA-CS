@@ -177,8 +177,6 @@ def main():
         raise RuntimeError("A variável TELEGRAM_TOKEN não está definida!")
 
     application = ApplicationBuilder().token(TOKEN).build()
-    
-    application.bot.delete_webhook(drop_pending_updates=True)  # <— aqui!
 
     # Registra handlers
     application.add_handler(CommandHandler("start", start))
@@ -186,7 +184,8 @@ def main():
         MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message)
     )
 
-    # Inicia polling (sem mais conflitos)
-    application.run_polling()
+    # Inicia o polling **removendo** qualquer webhook ou updates pendentes
+    application.run_polling(drop_pending_updates=True)
+    
 if __name__ == '__main__':
     main()
