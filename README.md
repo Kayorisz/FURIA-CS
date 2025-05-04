@@ -9,7 +9,7 @@ Acesse [t.me/TimeFURIA_Bot](https://t.me/TimeFURIA_Bot), digite /start para inic
 
 
 ### **💻 Instalação e Execução Local**
-Se o bot não estiver disponível pela nuvem, baixe o repositório e execute o arquivo 'Chat.exe, localizado na pasta Executável para iniciar a conversa localmente.
+Se o bot não estiver disponível pela nuvem, baixe o repositório e execute o arquivo Chat.exe, localizado na pasta Executável para iniciar a conversa localmente.
 
 
 ### **🔑 Palavras-chaves**
