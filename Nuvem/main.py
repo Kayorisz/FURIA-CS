@@ -81,13 +81,13 @@ def resposta(msg):
         return "A FURIA foi fundada em agosto de 2017 por Jaime Pádua, André Akkari, Cristian Guedes e Nicholas Nogueira!"
     elif "proxima" in msg and "partida" in msg:
         return "Atualmente, a FURIA não tem nenhuma partida marcada, embora já tenha três torneios confirmados: o IEM Dallas 2025, o PGL Astana 2025 e o Austin Major 2025!"
-    elif "proximo" in msg and "torneio" or "proximo" in msg and "campeonato" in msg: #aqui
+    elif "proximo" in msg and "torneio" or "proximo" in msg and "campeonato" in msg or "próximo" in msg and "campeonato" in msg: 
         return "A FURIA já tem três torneios confirmados: o Austin Major 2025, o IEM Dallas 2025 e o PGL Astana 2025!"
-    elif "partida" in msg and "recente" in msg or "partida" in msg and "anterior": #aqui
+    elif "partida" in msg and "recente" in msg or "partida" in msg and "anterior": 
         return "A FURIA vem de uma sequência difícil, com 4 derrotas e 1 vitória! Ainda sim, o time mantém cerca de 65% de vitórias no últimos meses!"
     elif "map" in msg:
         return "O melhor mapa da FURIA é o Nuke, onde o time tem uma taxa de vitória de 71%. Eles também se destacam em Dust2 e Ancient, mas o Nuke é o seu mapa mais forte!"
-    elif "ct" in msg or "contra" in msg and "terrorista" in msg or "contra" in msg:
+    elif msg == "ct" or "contra" in msg and "terrorista" in msg or "contra" in msg:
         return "Atualmente a FURIA enfrenta dificuldades no lado Contra-Terrorista (CT),  acumulando várias derrotas em LANs em 2025."
     elif "terrorista" in msg or msg == "tr":
         return "A FURIA tem se saído bem no lado Terrorista (TR), com execuções eficientes e boas leituras em partidas recentes de 2025."
