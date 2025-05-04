@@ -15,9 +15,9 @@ def removeacentos(texto):
 
 def resposta(msg):
     msg = msg.lower()
-    if "oi" in msg or "ola" in msg or "eae" in msg or "eai" in msg or "e ai" in msg:
+    if "oi" in msg or "ola" in msg or "eae" in msg or "eai" in msg or "e ai" in msg or "olá" in msg or "eaí" in msg or "e aí" in msg:
         return "Oi! Como posso ajudar?"
-    elif ("como" in msg and "esta" in msg) or ("como" in msg and "vai" in msg):
+    elif ("como" in msg and "esta" in msg) or ("como" in msg and "vai" in msg) or ("como" in msg and "está" in msg) or ("como" in msg and "vai" in msg):
         return "Estou ótimo, obrigado por perguntar! Como posso te ajudar hoje?"
     
     elif "furia" in msg:
