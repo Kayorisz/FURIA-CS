@@ -90,7 +90,7 @@ def resposta(msg):
     elif "ct" in msg or "contra" in msg and "terrorista" in msg or "contra" in msg:
         return "Atualmente a FURIA enfrenta dificuldades no lado Contra-Terrorista (CT),  acumulando várias derrotas em LANs em 2025."
     elif "terrorista" in msg or msg == "tr":
-        return "A FURIA, atualmente, tem mostrando um desempenho sólido no lado Terrorista (TR)!"
+        return "A FURIA tem se saído bem no lado Terrorista (TR), com execuções eficientes e boas leituras em partidas recentes de 2025."
     
     elif "ultimo" in msg and "jogo" in msg:
         return "O último jogo da FURIA foi contra a equipe The MongolZ, e acabamos sendo derrotados."
@@ -155,8 +155,6 @@ def resposta(msg):
     elif "lenovo" in msg:
         return "Parceira desde 2022, a Lenovo equipa a FURIA com computadores e tecnologia de ponta, garantindo que a equipe jogue com a melhor performance possível nos campeonatos de CS2."
 
-    elif "sair" in msg:
-        return "Ok, até mais! Se precisar de algo, é só chamar!"
     else:
         return "Desculpe, não entendi."
 
@@ -165,11 +163,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_message = update.message.text
-    response = resposta(user_message)
-    await update.message.reply_text(response)
-
-    if "Ok, até mais!" in response:
-        await context.application.stop()
+    resposta_texto = resposta(user_message)
+    await update.message.reply_text(resposta_texto)
 
 def main():
     TOKEN = os.getenv("TELEGRAM_TOKEN")
@@ -177,15 +172,9 @@ def main():
         raise RuntimeError("A variável TELEGRAM_TOKEN não está definida!")
 
     application = ApplicationBuilder().token(TOKEN).build()
-
-    # Registra handlers
     application.add_handler(CommandHandler("start", start))
-    application.add_handler(
-        MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message)
-    )
-
-    # Inicia o polling **removendo** qualquer webhook ou updates pendentes
-    application.run_polling(drop_pending_updates=True)
+    application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
+    application.run_polling()
     
 if __name__ == '__main__':
     main()

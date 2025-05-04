@@ -14,9 +14,9 @@ def removeacentos(texto):
 
 def resposta(msg):
     msg = msg.lower()
-    if "oi" in msg or "ola" in msg or "eae" in msg or "eai" in msg or "e ai" in msg:
+    if "oi" in msg or "ola" in msg or "eae" in msg or "eai" in msg or "e ai" in msg or "olá" in msg or "eaí" in msg or "e aí" in msg:
         return "Oi! Como posso ajudar?"
-    elif ("como" in msg and "esta" in msg) or ("como" in msg and "vai" in msg):
+    elif ("como" in msg and "esta" in msg) or ("como" in msg and "vai" in msg) or ("como" in msg and "está" in msg) or ("como" in msg and "vai" in msg):
         return "Estou ótimo, obrigado por perguntar! Como posso te ajudar hoje?"
     
     elif "furia" in msg:
@@ -49,7 +49,7 @@ def resposta(msg):
     
     elif  "jogador" in msg and "antigo" in msg or "ex" in msg and "jogador" in msg:
         return "A FURIA já contou com grandes nomes no CS ao longo dos anos! Jogadores como HEN1, arT, VINI, ableJ e chelo marcaram história com a camisa da equipe antes de seguirem novos caminhos. Cada um deixou sua marca — e a torcida nunca esquece!"
-    elif "art" in msg or "andrei" in msg or "piovezan" in msg:
+    elif "art" == msg or "andrei" in msg or "piovezan" in msg:
         return "Andrei 'arT' Piovezan foi o capitão da FURIA por muitos anos, conhecido por seu estilo agressivo e tático. Em abril de 2024, foi movido para o banco de reservas após uma longa trajetória na equipe."
     elif "vini" in msg or "vinicius" in msg or "figueiredo" in msg:
         return "Vinicius 'VINI' Figueiredo atuou como rifler na FURIA, sendo peça-chave em diversas conquistas da equipe. Deixou o time em 2022 para buscar novos desafios."
@@ -80,16 +80,16 @@ def resposta(msg):
         return "A FURIA foi fundada em agosto de 2017 por Jaime Pádua, André Akkari, Cristian Guedes e Nicholas Nogueira!"
     elif "proxima" in msg and "partida" in msg:
         return "Atualmente, a FURIA não tem nenhuma partida marcada, embora já tenha três torneios confirmados: o IEM Dallas 2025, o PGL Astana 2025 e o Austin Major 2025!"
-    elif "proximo" in msg and "torneio" or "proximo" in msg and "campeonato" in msg:
+    elif "proximo" in msg and "torneio" or "proximo" in msg and "campeonato" in msg: #aqui
         return "A FURIA já tem três torneios confirmados: o Austin Major 2025, o IEM Dallas 2025 e o PGL Astana 2025!"
-    elif "partida" in msg and "recente" in msg or "partida" in msg and "anterior":
+    elif "partida" in msg and "recente" in msg or "partida" in msg and "anterior": #aqui
         return "A FURIA vem de uma sequência difícil, com 4 derrotas e 1 vitória! Ainda sim, o time mantém cerca de 65% de vitórias no últimos meses!"
     elif "map" in msg:
         return "O melhor mapa da FURIA é o Nuke, onde o time tem uma taxa de vitória de 71%. Eles também se destacam em Dust2 e Ancient, mas o Nuke é o seu mapa mais forte!"
     elif "ct" in msg or "contra" in msg and "terrorista" in msg or "contra" in msg:
         return "Atualmente a FURIA enfrenta dificuldades no lado Contra-Terrorista (CT),  acumulando várias derrotas em LANs em 2025."
-    elif "terrorista" in msg or "tr" in msg:
-        return "A FURIA, atualmente, tem mostrando um desempenho sólido no lado Terrorista (TR)!"
+    elif "terrorista" in msg or msg == "tr":
+        return "A FURIA tem se saído bem no lado Terrorista (TR), com execuções eficientes e boas leituras em partidas recentes de 2025."
     
     elif "ultimo" in msg and "jogo" in msg:
         return "O último jogo da FURIA foi contra a equipe The MongolZ, e acabamos sendo derrotados."
@@ -99,11 +99,11 @@ def resposta(msg):
         return "O primeiro grande campeonato conquistado pela FURIA foi a ESEA Season 27: Global Challenge, em 2018. Essa vitória marcou o início da ascensão da equipe no cenário internacional."
     elif "dreamhack" in msg or "rio" in msg and "2019" in msg:
         return "A DreamHack Open Rio 2019 foi histórica para a FURIA. Jogando em casa, com o apoio da torcida brasileira, a equipe chegou à final e consolidou seu nome como uma potência em ascensão."
-    elif "ecs" in msg and "season 7" in msg or "final" in msg and "2019" in msg:
+    elif "ecs" in msg or "season 7" in msg or "final" in msg and "2019" in msg:
         return "A FURIA brilhou nas finais da ECS Season 7 em 2019, enfrentando as melhores equipes do mundo e mostrando um CS agressivo e único que chamou a atenção do cenário internacional."
-    elif "esl" in msg and "pro league" in msg and "2020" in msg:
+    elif "esl" in msg or "pro league" in msg and "2020" in msg: 
         return "Em 2020, a FURIA venceu a ESL Pro League Season 12: América do Norte. Foi um título muito importante em plena pandemia, reafirmando a força da equipe no cenário americano."
-    elif "iem" in msg and "new york" in msg and "2020" in msg:
+    elif "iem" in msg or "new york" in msg and "2020" in msg:
         return "A FURIA conquistou o título da IEM New York 2020 na região da América do Norte, vencendo times de alto nível e mostrando sua consistência e evolução no cenário competitivo."
     elif "melbourne" in msg or "esl challenger" in msg and "2022" in msg:
         return "A vitória no ESL Challenger Melbourne em 2022 foi mais uma conquista internacional da FURIA, reforçando o nome da organização como uma das potências brasileiras no CS."
@@ -132,7 +132,7 @@ def resposta(msg):
         return "Venha participar do Discord da FURIA e faça parte da nossa comunidade furiosa! Lá rola bate-papo, eventos e novidades exclusivas: discord.gg/furiagg"
     elif "youtube" in msg or "video" in msg:
         return "Quer ver os bastidores, jogadas incríveis e vídeos especiais da FURIA? Nosso canal no YouTube tá recheado de conteúdo! Se inscreve lá: youtube.com/furiagg"
-    elif "twitch" in msg or "transmiss" in msg:
+    elif "twitch" in msg or "transmiss" in msg: #aqui
         return "Acompanhe as transmissões da FURIA ao vivo na Twitch! Jogos, torneios e muito conteúdo da nossa tropa te esperam: https://www.twitch.tv/furiatv"
     elif "instagram" in msg:
         return "A FURIA compartilha bastidores, conquistas e o dia a dia dos nossos atletas no Instagram! Acompanhe tudo de perto no nosso instagram: instagram.com/furiagg"
