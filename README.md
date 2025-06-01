@@ -20,3 +20,5 @@ Exemplos de palavras que o chatbot entende relacionadas a CS:
 - Quem é o Fallen?
 - Quem patrocina a FURIA?
 - Onde comprar os uniformes da FURIA?
+
+*projeto feito apenas para case*
